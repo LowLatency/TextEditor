@@ -13,6 +13,10 @@ public class Model extends Observable{
 		System.out.println("Model()");
 	}
 	
+	public void setTextBox(String textBox) {
+		this.textBox = textBox;
+	}
+	
 	public void setSave1(){
 		this.save1 = this.textBox;
 		setChanged();
@@ -34,8 +38,8 @@ public class Model extends Observable{
 	}
 	
 	public void setClear() {
-		this.save1 = null;
-		this.save2 = null;
+		this.save1 = "";
+		this.save2 = "";
 		setChanged();
 		notifyObservers(save1);
 		notifyObservers(save2);

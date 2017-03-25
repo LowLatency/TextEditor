@@ -37,12 +37,12 @@ public class View implements Observer{
 		textBox = new JTextArea("Enter your notes here!");
 		buttonPanel = new JPanel();
 		
-		clearAll = new JButton("Clear All");
+		clearAll = new JButton("Clear Save");
 		save1 = new JButton("Save-1");
 		save2 = new JButton("Save-2");
 		recall1 = new JButton("1");
 		recall2 = new JButton("2");
-		clearTextBox = new JButton("Clear Field");
+		clearTextBox = new JButton("Clear");
 		
 		buttonPanel.add(clearAll);
 		buttonPanel.add(save1);
@@ -54,19 +54,16 @@ public class View implements Observer{
 		frame.add("North", new JLabel("Notes"));
 		frame.add("Center", textBox);
 		frame.add("South", buttonPanel);
-//		frame.getContentPane().add(textBox, BorderLayout.CENTER);
-//		frame.getContentPane().add(button, BorderLayout.SOUTH);
-//		frame.getContentPane().add(clear, BorderLayout.SOUTH);
 		frame.setVisible(true);
 	}
+
+	public void setTextBox(String text){
+		textBox.setText(text);
+	}
 	
-//	public JButton getButton(){
-//		return button;
-//	}
-//	
-//	public void setText(String text){
-//		label.setText(text);
-//	}
+	public String getTextBox() {
+		return textBox.getText();
+	}
 
 	@Override
 	public void update(Observable obs, Object obj) {
