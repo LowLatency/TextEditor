@@ -33,7 +33,7 @@ public class View implements Observer{
 		frame.setSize(600, 300);
 		frame.setLocation(400, 400);
 		
-				
+		
 		textBox = new JTextArea("Enter your notes here!");
 		buttonPanel = new JPanel();
 		

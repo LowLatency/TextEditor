@@ -3,8 +3,6 @@ package lowlatency;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.sun.scenario.effect.Blend.Mode;
-
 public class Controller implements ActionListener{
 	
 	private Model model;
@@ -20,19 +18,19 @@ public class Controller implements ActionListener{
 		System.out.println("Controller: action command: " + e.getActionCommand() + " clicked at " + new java.util.Date(e.getWhen()));
 		System.out.println("Controller: paramString: " + e.paramString());
 		
+		model.setTextBox(view.getTextBox());
+		
 		switch (e.getActionCommand()) {
 		case "Clear":
 			view.setTextBox(null);
 			break;
 			
 		case "Save-1":
-			model.setTextBox(view.getTextBox());
 			model.setSave1();
 			view.setTextBox("Saving 1");
 			break;
 			
 		case "Save-2":
-			model.setTextBox(view.getTextBox());
 			model.setSave2();
 			view.setTextBox("Saving 2");
 			break;
@@ -51,6 +49,7 @@ public class Controller implements ActionListener{
 			break;
 
 		default:
+			view.setTextBox("Error!");
 			break;
 		}
 	}
